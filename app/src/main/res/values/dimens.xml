@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="main_padding">40dp</dimen>
-    <dimen name="title_first_level_size">14sp</dimen>
+    <dimen name="title_first_level_size">20sp</dimen>
+    <dimen name="title_second_level_size">14sp</dimen>
     <dimen name="vertical_padding">20dp</dimen>
     <dimen name="horizontal_padding">10dp</dimen>
     <dimen name="item_divisor">1dp</dimen>

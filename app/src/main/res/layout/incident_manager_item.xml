@@ -6,7 +6,7 @@
 
         <variable
             name="item"
-            type="com.example.infrastructure.model.IncidentManagerItem" />
+            type="com.example.utility.model.IncidentManagerItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{item.date}"
-            android:textSize="@dimen/title_first_level_size"
+            android:textSize="@dimen/title_second_level_size"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,10 +31,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:autoLink="web"
-            android:textColorLink="@color/colorPrimary"
+            android:lines="2"
             android:text="@{item.managerName}"
             android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/title_first_level_size"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="@dimen/title_second_level_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/date"
             app:layout_constraintTop_toTopOf="parent" />

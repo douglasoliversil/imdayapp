@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/default_background"
     android:padding="@dimen/main_padding"
-    tools:context=".splash.MainActivity">
+    tools:context=".view.splash.MainActivity">
 
     <ImageView
         android:id="@+id/main_icon"
@@ -19,11 +20,10 @@
 
     <TextView
         android:id="@+id/main_title"
+        style="@style/FirstLevelTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:text="@string/welcome_title"
-        android:textSize="@dimen/title_first_level_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
