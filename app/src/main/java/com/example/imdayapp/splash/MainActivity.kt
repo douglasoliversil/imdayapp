@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import com.example.imdayapp.R
-import com.example.imdayapp.incidentManager.IncidentManagerActivity
+import com.example.imdayapp.navigation.NavigationActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupSplashHandler() {
         Handler().postDelayed({
-            startActivity(Intent(this, IncidentManagerActivity::class.java))
+            startActivity(Intent(this, NavigationActivity::class.java))
         }, SPLASH_DELAY_TIME)
     }
 

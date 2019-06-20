@@ -6,7 +6,7 @@
 
         <variable
             name="item"
-            type="com.example.imdayapp.incidentManager.IncidentManagerItem" />
+            type="com.example.infrastructure.model.IncidentManagerItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

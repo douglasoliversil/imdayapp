@@ -1,43 +1,26 @@
 package com.example.imdayapp.incidentManager
 
-import android.content.res.Resources
+import android.content.res.AssetManager
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import org.json.JSONObject
-import java.io.InputStream
-import java.util.*
+import com.example.business.DataProvider
+import com.example.business.DataProviderImpl
+import com.example.infrastructure.model.IncidentManagerItem
 
 class IncidentManagerViewModel : ViewModel() {
+
+    private lateinit var mProvider: DataProvider
 
     private val _managers = MutableLiveData<List<IncidentManagerItem>>()
 
     val managers: LiveData<List<IncidentManagerItem>>
         get() = _managers
 
-    fun init(resources: Resources) {
+    fun init(assetManager: AssetManager) {
 
-        val inputStream: InputStream = resources.assets.open("imday.json")
+        mProvider = DataProviderImpl(assetManager)
 
-        val buffer = ByteArray(inputStream.available())
-
-        inputStream.read(buffer)
-
-        inputStream.close()
-
-        val json = String(buffer)
-
-        val incidentManagerItem = JSONObject(json)
-
-        val iterator = incidentManagerItem.keys()
-
-        val incidentManagerList = mutableListOf<IncidentManagerItem>()
-
-        while (iterator.hasNext()) {
-            val key = iterator.next()
-            incidentManagerList.add(IncidentManagerItem(key, incidentManagerItem.get(key).toString()))
-        }
-
-        _managers.value = incidentManagerList
+        _managers.value = mProvider.getIncidentManagers()
     }
 }

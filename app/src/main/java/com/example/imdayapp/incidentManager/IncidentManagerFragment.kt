@@ -1,36 +1,46 @@
 package com.example.imdayapp.incidentManager
 
+
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.imdayapp.R
-import com.example.imdayapp.databinding.ActivityIncidentManagerBinding
+import com.example.imdayapp.databinding.FragmentIncidentManagerBinding
 
-class IncidentManagerActivity : AppCompatActivity() {
+class IncidentManagerFragment : Fragment() {
 
     private lateinit var mViewModel: IncidentManagerViewModel
-    private lateinit var mBinding: ActivityIncidentManagerBinding
+    private lateinit var mBinding: FragmentIncidentManagerBinding
     private lateinit var mIncidentManagerListAdapter: IncidentManagerListAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         mViewModel = ViewModelProviders.of(this)[IncidentManagerViewModel::class.java]
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_incident_manager)
+        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_incident_manager, container, false)
         mIncidentManagerListAdapter = IncidentManagerListAdapter(mViewModel)
 
         with(mBinding) {
             viewModel = mViewModel
+            lifecycleOwner = this@IncidentManagerFragment
             with(managersList) {
-                layoutManager = LinearLayoutManager(this@IncidentManagerActivity, RecyclerView.VERTICAL, false)
+                layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
                 adapter = mIncidentManagerListAdapter
             }
         }
 
         mBinding.executePendingBindings()
-        mViewModel.init(resources)
+        mViewModel.init(resources.assets)
+        return mBinding.root
     }
+
+
 }
