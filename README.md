@@ -10,12 +10,14 @@
     a instalação do Intel Hardware Accelerator (HAXM) no caso de processadores Intel
   
 # Instruções para execução de testes (Via Android Studio)
+  - Desabilitar a renderização de animações no device utilizado
   - Na perspectiva 'Android' na aba lateral 'Project' do Android Studio, 
     localizar o diretório 'com.example.imdayapp (androidTest)'
   - Clicar com o botão direito do mouse e selecionar 'Run Tests' no menu de contexto
   - Será exibida uma janela para seleção do device no qual deverá se executar os testes
   
 # Instruções para execução de testes (Via prompt de comando)
+  - Desabilitar a renderização de animações no device utilizado
   - Garanta que exista algum device conectado ao computador no modo de depuração
   - No prompt, navegue até o diretório root do projeto
   - No prompt, execute o comando './gradlew connecteddebugAndroidTest --continue'
