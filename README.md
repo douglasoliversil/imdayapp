@@ -1,8 +1,11 @@
+# Pré-requisitos
+  - Android Studio 3.4.1
+  - Java Development Kit 1.8
+  - Conexão com a internet para download de dependências do projeto
+
 # Intruções para build
-  - Abrir o projeto na IDE Android Studio versão 3.4.1
-  - Configurar o Java Development Kit para a versão 1.8
-  - Garantir conexão com a internet para download de dependências
-  - Executar o aplicativo em dispositivo com versão de Android a partir da Nougat (API 24)
+  - Abrir o projeto no Android Studio (a ferramenta deverá iniciar o processo automaticamente)
+  - Após o término, executar o aplicativo em dispositivo com versão de Android a partir da Nougat (API 24)
   - No caso do uso de emuladores, verificar a habilitação de aceleração de hardware na placa mãe do computador e
     a instalação do Intel Hardware Accelerator (HAXM) no caso de processadores Intel
   
