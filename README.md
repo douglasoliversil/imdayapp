@@ -3,7 +3,7 @@
   - Java Development Kit 1.8
   - Conexão com a internet para download de dependências do projeto
 
-# Intruções para build
+# Instruções para build
   - Abrir o projeto no Android Studio (a ferramenta deverá iniciar o processo automaticamente)
   - Após o término, executar o aplicativo em dispositivo com versão de Android a partir da Nougat (API 24)
   - No caso do uso de emuladores, verificar a habilitação de aceleração de hardware na placa mãe do computador e
