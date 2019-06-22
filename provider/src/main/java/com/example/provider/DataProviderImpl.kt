@@ -1,9 +1,12 @@
 package com.example.provider
 
 import android.content.res.AssetManager
+import com.example.utility.extension.getNameOfDay
 import com.example.utility.model.IncidentManagerItem
 import org.json.JSONObject
 import java.io.InputStream
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DataProviderImpl(private val mAssetManager: AssetManager) : DataProvider {
 
@@ -27,7 +30,14 @@ class DataProviderImpl(private val mAssetManager: AssetManager) : DataProvider {
 
         while (iterator.hasNext()) {
             val key = iterator.next()
-            incidentManagerList.add(IncidentManagerItem(key, incidentManagerItem.get(key).toString()))
+            val calendar = Calendar.getInstance()
+            calendar.time = SimpleDateFormat("dd/MM/yy").parse(key)
+            incidentManagerList.add(
+                IncidentManagerItem(
+                    calendar.getNameOfDay() + " ($key)",
+                    incidentManagerItem.get(key).toString()
+                )
+            )
         }
 
         return incidentManagerList

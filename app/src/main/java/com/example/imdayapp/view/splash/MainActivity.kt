@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupSplashHandler() {
         Handler().postDelayed({
             startActivity(Intent(this, NavigationActivity::class.java))
+            finish()
         }, SPLASH_DELAY_TIME)
     }
 
