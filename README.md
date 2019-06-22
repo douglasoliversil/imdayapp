@@ -1,6 +1,6 @@
 # Intruções para build
   - Abrir o projeto na IDE Android Studio versão 3.4.1
-  - Configura o Java Development Kit para a versão 1.8
+  - Configurar o Java Development Kit para a versão 1.8
   - Garantir conexão com a internet para download de dependências
   - Executar o aplicativo em dispositivo com versão de Android a partir da Nougat (API 24)
   - No caso do uso de emuladores, verificar a habilitação de aceleração de hardware na placa mãe do computador e
