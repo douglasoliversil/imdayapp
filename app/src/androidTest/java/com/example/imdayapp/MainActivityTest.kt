@@ -1,22 +1,27 @@
-package com.example.imdayapp.view.splash
+package com.example.imdayapp
 
 import android.content.Intent
-import androidx.test.filters.MediumTest
+import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
+import com.example.imdayapp.view.splash.MainActivity
 import org.junit.Before
+import org.junit.FixMethodOrder
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.junit.runners.MethodSorters
 
+@LargeTest
 @RunWith(AndroidJUnit4::class)
-@MediumTest
+@FixMethodOrder(MethodSorters.JVM)
 class MainActivityTest {
 
-    @get:Rule
+    @Rule
+    @JvmField
     var activityRule: ActivityTestRule<MainActivity> = ActivityTestRule(MainActivity::class.java)
 
-    private val robot: MainActivityRobot = MainActivityRobot()
+    private val robot: BaseRobot = BaseRobot()
 
     @Before
     fun init() {
@@ -31,10 +36,10 @@ class MainActivityTest {
     }
 
     @Test
-    fun testSplash_hasCalledNextScreen() {
+    fun testNavigation_isOpened() {
         robot
             .waitSplashEnd()
-            .checkIncidentManagerIsListed()
-//            .checkNavigationIsActive()
+            .checkNavigationIsOpened()
     }
+
 }
